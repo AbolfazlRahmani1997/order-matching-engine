@@ -1,0 +1,28 @@
+# Order Matching Engine
+
+This is a high-performance **Order Matching Engine** implemented in **Go** with **GORM**, designed to handle buy and sell orders efficiently.
+
+## Features
+- **Order Matching**: Matches buy and sell orders based on price and quantity.
+- **Expiration Management**: Removes expired orders from the heap automatically.
+- **Concurrency**: Handles requests concurrently using Go's goroutines.
+- **Database Integration**: Stores orders and their status in a MySQL database.
+- **RESTful API**: Exposes endpoints for submitting buy/sell orders via HTTP.
+- **Scalable Design**: Can handle high loads and concurrent users.
+
+---
+
+## Requirements
+
+- **Go 1.20+**
+- **MySQL 8.0+**
+- **Gin Framework**
+- **GORM ORM**
+
+---
+
+## Setup Instructions
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/AbolfazlRahmani1997/order-matching-engine.git
