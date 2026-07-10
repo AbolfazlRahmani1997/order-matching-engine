@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package core.v1;
+
+option go_package = "github.com/jupiter/gold-proto/core/v1;corev1";
+
+service GoldCore {
+  rpc GetPrice(GetPriceRequest) returns (GetPriceResponse);
+  rpc CalculatePrice(CalculatePriceRequest) returns (CalculatePriceResponse);
+  rpc GetSpotPrice(GetSpotPriceRequest) returns (GetSpotPriceResponse);
+}
+
+message GetPriceRequest {
+  string mode = 1;
+}
+
+message GetPriceResponse {
+  string mode = 1;
+  double spot_price = 2;
+  string currency = 3;
+  PriceDetails prices = 4;
+}
+
+message PriceDetails {
+  double buy_price = 1;
+  double sell_price = 2;
+  double spread = 3;
+  double buy_fee = 4;
+  double sell_fee = 5;
+  double buy_fee_percent = 6;
+  double sell_fee_percent = 7;
+  double buy_price_with_fee = 8;
+  double sell_price_with_fee = 9;
+  double buy_premium = 10;
+  double sell_discount = 11;
+}
+
+message CalculatePriceRequest {
+  double weight = 1;
+  string weight_unit = 2;
+  string mode = 3;
+  string type = 4;
+}
+
+message CalculatePriceResponse {
+  string mode = 1;
+  string type = 2;
+  double weight = 3;
+  string weight_unit = 4;
+  double spot_price = 5;
+  double base_price = 6;
+  double fee = 7;
+  double fee_percent = 8;
+  double total_price = 9;
+}
+
+message GetSpotPriceRequest {}
+
+message GetSpotPriceResponse {
+  double spot_price = 1;
+}
