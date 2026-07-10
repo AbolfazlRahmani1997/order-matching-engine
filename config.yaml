@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+database:
+  host: localhost
+  port: 5432
+  user: postgres
+  password: postgres
+  dbname: matching_engine
+  sslmode: disable
+
+log:
+  level: "info"
